@@ -1,10 +1,8 @@
 package com.example.hong611.mylistview.adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,37 +14,17 @@ import java.util.List;
 /**
  * Created by hong611 on 2015/6/26.
  */
-public class MyListViewAdapter extends BaseAdapter {
-    Context context;
-    List<ItemModel> itemModels;
-    LayoutInflater layoutInflater;
+public class MyListViewAdapter extends MyBaseAdapter {
 
     public MyListViewAdapter(Context context, List<ItemModel> datas) {
-        this.context = context;
-        itemModels = datas;
-        layoutInflater = LayoutInflater.from(context);
-    }
-
-    @Override
-    public int getCount() {
-        return itemModels.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return itemModels.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+        super(context,datas);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //∆’Õ®∑Ω∑®
 //        if (convertView == null) {
-//            convertView = layoutInflater.inflate(R.layout.mylist_item, null);
+//            convertView = layoutInflater.inflate(R.layout.my_listview_item, null);
 //        }
 //        ImageView avatar = (ImageView) convertView.findViewById(R.id.avatar);
 //        TextView title = (TextView) convertView.findViewById(R.id.title);
@@ -60,7 +38,7 @@ public class MyListViewAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder=new ViewHolder();
-            convertView = layoutInflater.inflate(R.layout.mylist_item, null);
+            convertView = layoutInflater.inflate(R.layout.my_listview_item, null);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.avatar);
             viewHolder.title = (TextView) convertView.findViewById(R.id.title);
             viewHolder.content = (TextView) convertView.findViewById(R.id.content);

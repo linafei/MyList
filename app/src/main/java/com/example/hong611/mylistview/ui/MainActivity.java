@@ -86,7 +86,24 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.show_gridview:
                     fragmentTransaction.replace(R.id.fg_container, gridViewFragment);
                     break;
-                case R.id.show_recyclerview:
+                case R.id.show_rec_listview:
+                    recyclerViewFragment = new RecyclerViewFragment();
+                    recyclerViewFragment.setShowTag(RecyclerViewFragment.SHOW_LISTVIEW);
+                    fragmentTransaction.replace(R.id.fg_container, recyclerViewFragment);
+                    break;
+                case R.id.show_rec_gridview:
+                    recyclerViewFragment = new RecyclerViewFragment();
+                    recyclerViewFragment.setShowTag(RecyclerViewFragment.SHOW_GRIDVIEW);
+                    fragmentTransaction.replace(R.id.fg_container, recyclerViewFragment);
+                    break;
+                case R.id.show_hor_gridview:
+                    recyclerViewFragment = new RecyclerViewFragment();
+                    recyclerViewFragment.setShowTag(RecyclerViewFragment.SHOW_HORIZANTAL_GRIDVIEW);
+                    fragmentTransaction.replace(R.id.fg_container, recyclerViewFragment);
+                    break;
+                case R.id.show_staggered_view:
+                    recyclerViewFragment = new RecyclerViewFragment();
+                    recyclerViewFragment.setShowTag(RecyclerViewFragment.SHOW_STAGGERED_VIEW);
                     fragmentTransaction.replace(R.id.fg_container, recyclerViewFragment);
                     break;
             }

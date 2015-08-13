@@ -1,10 +1,8 @@
 package com.example.hong611.mylistview.adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,30 +14,10 @@ import java.util.List;
 /**
  * Created by hong611 on 2015/8/13.
  */
-public class MyGridViewAdapter extends BaseAdapter {
-    List<ItemModel> itemModels;
-    Context context;
-    LayoutInflater layoutInflater;
+public class MyGridViewAdapter extends MyBaseAdapter {
 
     public MyGridViewAdapter(Context context, List<ItemModel> itemModels) {
-        this.context = context;
-        this.itemModels = itemModels;
-        layoutInflater = LayoutInflater.from(context);
-    }
-
-    @Override
-    public int getCount() {
-        return itemModels.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return itemModels.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+        super(context,itemModels);
     }
 
     @Override
@@ -48,8 +26,8 @@ public class MyGridViewAdapter extends BaseAdapter {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = layoutInflater.inflate(R.layout.my_gridview_item, null);
-            viewHolder.avatar = (ImageView) convertView.findViewById(R.id.avatar_gv);
-            viewHolder.title = (TextView) convertView.findViewById(R.id.title_gv);
+            viewHolder.avatar = (ImageView) convertView.findViewById(R.id.avatar);
+            viewHolder.title = (TextView) convertView.findViewById(R.id.title);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();

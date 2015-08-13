@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:horizontalSpacing="5dp"
         android:numColumns="3"
-        android:padding="16dp"
         android:verticalSpacing="5dp" />
 
 </LinearLayout>

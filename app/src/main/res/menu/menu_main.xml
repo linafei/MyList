@@ -3,32 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <!--<item android:id="@+id/action_search"-->
-        <!--android:title="action_search"-->
-        <!--android:icon="android.support.v7.widget.SearchView"-->
-        <!--app:showAsAction="ifRoom"/>-->
+    <!--android:title="action_search"-->
+    <!--android:icon="android.support.v7.widget.SearchView"-->
+    <!--app:showAsAction="ifRoom"/>-->
 
     <!--<item android:id="@+id/action_share"-->
-        <!--android:title="action_share"-->
-        <!--android:icon="android.support.v7.widget.ShareActionProvider"-->
-        <!--app:showAsAction="ifRoom"/>-->
+    <!--android:title="action_share"-->
+    <!--android:icon="android.support.v7.widget.ShareActionProvider"-->
+    <!--app:showAsAction="ifRoom"/>-->
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+    <!--<item-->
+    <!--android:id="@+id/action_settings"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/action_settings"-->
+    <!--app:showAsAction="never"/>-->
 
     <item
         android:id="@+id/show_listview"
         android:title="ListView"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/show_gridview"
         android:title="GridView"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
-        android:id="@+id/show_recyclerview"
-        android:title="RecyclerView"
-        app:showAsAction="never"/>
-
+        android:id="@+id/show_rec_listview"
+        android:title="RecListView"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/show_rec_gridview"
+        android:title="RecGridView"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/show_hor_gridview"
+        android:title="HorizationGridview"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/show_staggered_view"
+        android:title="StaggeredView"
+        app:showAsAction="never" />
 </menu>
