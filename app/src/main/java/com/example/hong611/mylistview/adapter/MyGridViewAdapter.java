@@ -21,10 +21,10 @@ public class MyGridViewAdapter extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
 
-    public MyGridViewAdapter(Context context,List<ItemModel> itemModels){
-        this.context=context;
-        this.itemModels=itemModels;
-        layoutInflater=LayoutInflater.from(context);
+    public MyGridViewAdapter(Context context, List<ItemModel> itemModels) {
+        this.context = context;
+        this.itemModels = itemModels;
+        layoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -45,19 +45,23 @@ public class MyGridViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-        if(convertView==null){
-            viewHolder=new ViewHolder();
-            convertView=layoutInflater.inflate(R.layout.my_gridview_item,null);
-            viewHolder.avatar= (ImageView) convertView.findViewById(R.id.avatar_gv);
-            viewHolder.title= (TextView) convertView.findViewById(R.id.title_gv);
+        if (convertView == null) {
+            viewHolder = new ViewHolder();
+            convertView = layoutInflater.inflate(R.layout.my_gridview_item, null);
+            viewHolder.avatar = (ImageView) convertView.findViewById(R.id.avatar_gv);
+            viewHolder.title = (TextView) convertView.findViewById(R.id.title_gv);
             convertView.setTag(viewHolder);
-        }else {
-
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-        return null;
+        ItemModel itemModel = itemModels.get(position);
+        viewHolder.avatar.setImageResource(itemModel.getAvatar());
+        viewHolder.title.setText(itemModel.getTitil());
+
+        return convertView;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         public ImageView avatar;
         public TextView title;
     }

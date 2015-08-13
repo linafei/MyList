@@ -10,6 +10,10 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.example.hong611.mylistview.R;
+import com.example.hong611.mylistview.model.ItemModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     GridViewFragment gridViewFragment;
     RecyclerViewFragment recyclerViewFragment;
 
+    public static List<ItemModel> itemModels = new ArrayList<ItemModel>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         initFragment();
+
+        initDatas();
     }
 
     @Override
@@ -55,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentTransaction.replace(R.id.fg_container, listViewFragment);
         fragmentTransaction.commit();
+    }
+
+    private void initDatas() {
+        for (int i = 0; i < 20; i++) {
+            ItemModel itemModel = new ItemModel("This is title " + i, "This is content " + i, R.mipmap.ic_launcher);
+
+            itemModels.add(itemModel);
+        }
     }
 
     private Toolbar.OnMenuItemClickListener menuItemClickListener = new Toolbar.OnMenuItemClickListener() {
