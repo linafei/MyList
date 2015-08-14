@@ -1,4 +1,4 @@
-package com.example.hong611.mylistview.ui;
+package com.example.hong611.mylistview.ui.views;
 
 /*
  * Copyright (C) 2014 The Android Open Source Project

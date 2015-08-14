@@ -1,4 +1,4 @@
-package com.example.hong611.mylistview.ui;
+package com.example.hong611.mylistview.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.hong611.mylistview.R;
 import com.example.hong611.mylistview.adapter.MyRecyclerAdapter;
+import com.example.hong611.mylistview.ui.activity.MainActivity;
 
 /**
  * Created by hong611 on 2015/8/13.

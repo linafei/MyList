@@ -1,4 +1,4 @@
-package com.example.hong611.mylistview.ui;
+package com.example.hong611.mylistview.ui.activity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 
 import com.example.hong611.mylistview.R;
 import com.example.hong611.mylistview.model.ItemModel;
+import com.example.hong611.mylistview.ui.fragment.GridViewFragment;
+import com.example.hong611.mylistview.ui.fragment.ListViewFragment;
+import com.example.hong611.mylistview.ui.fragment.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;

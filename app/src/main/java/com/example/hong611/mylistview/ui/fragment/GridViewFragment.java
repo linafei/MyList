@@ -1,4 +1,4 @@
-package com.example.hong611.mylistview.ui;
+package com.example.hong611.mylistview.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.GridView;
 import com.example.hong611.mylistview.R;
 import com.example.hong611.mylistview.adapter.MyGridViewAdapter;
 import com.example.hong611.mylistview.model.ItemModel;
+import com.example.hong611.mylistview.ui.activity.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,19 @@
-package com.example.hong611.mylistview.ui;
+package com.example.hong611.mylistview.ui.fragment;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.hong611.mylistview.R;
 import com.example.hong611.mylistview.adapter.MyListViewAdapter;
+import com.example.hong611.mylistview.ui.activity.ImageShowActivity;
+import com.example.hong611.mylistview.ui.activity.MainActivity;
+import com.example.hong611.mylistview.ui.activity.WebShowActivity;
 
 public class ListViewFragment extends Fragment {
     MyListViewAdapter myAdapter;
@@ -27,11 +32,27 @@ public class ListViewFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         setAdapter();
+        initView();
     }
 
     private void setAdapter() {
         myAdapter = new MyListViewAdapter(getActivity(), MainActivity.itemModels);
         listView.setAdapter(myAdapter);
+    }
+
+    private void initView() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(getActivity(), WebShowActivity.class);
+                    getActivity().startActivity(intent);
+                }else if(position==1){
+                    Intent intent = new Intent(getActivity(), ImageShowActivity.class);
+                    getActivity().startActivity(intent);
+                }
+            }
+        });
     }
 
 }
