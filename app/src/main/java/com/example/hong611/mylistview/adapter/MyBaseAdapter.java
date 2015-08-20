@@ -6,32 +6,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.hong611.mylistview.model.ItemModel;
+import com.example.hong611.mylistview.utils.MyViewHolder;
 
 import java.util.List;
 
 /**
  * Created by hong611 on 2015/8/13.
  */
-public class MyBaseAdapter extends BaseAdapter {
-    Context context;
-    List<ItemModel> itemModels;
-    LayoutInflater layoutInflater;
+public abstract class MyBaseAdapter<T> extends BaseAdapter {
+    protected Context context;
+    protected List<T> mDatas;
+    protected LayoutInflater layoutInflater;
+    protected int layoutId;
 
-    public MyBaseAdapter(Context context, List<ItemModel> datas) {
+    public MyBaseAdapter(Context context, List<T> datas, int layoutId) {
         this.context = context;
-        itemModels = datas;
+        mDatas = datas;
         layoutInflater = LayoutInflater.from(context);
+        this.layoutId = layoutId;
     }
 
     @Override
     public int getCount() {
-        return itemModels.size();
+        return mDatas.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return itemModels.get(position);
+        return mDatas.get(position);
     }
 
     @Override
@@ -41,6 +43,12 @@ public class MyBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        MyViewHolder myViewHolder = MyViewHolder.get(context, convertView, parent, layoutId, position);
+        T item = mDatas.get(position);
+        convert(myViewHolder, item);
+
+        return myViewHolder.getConvertView();
     }
+
+    public abstract void convert(MyViewHolder myViewHolder,T item);
 }

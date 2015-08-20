@@ -12,7 +12,9 @@ import android.widget.ListView;
 import com.example.hong611.mylistview.R;
 import com.example.hong611.mylistview.adapter.MyListViewAdapter;
 import com.example.hong611.mylistview.ui.activity.ImageShowActivity;
+import com.example.hong611.mylistview.ui.activity.LogicViewActivity;
 import com.example.hong611.mylistview.ui.activity.MainActivity;
+import com.example.hong611.mylistview.ui.activity.RainViewActivity;
 import com.example.hong611.mylistview.ui.activity.WebShowActivity;
 
 public class ListViewFragment extends Fragment {
@@ -44,11 +46,18 @@ public class ListViewFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent;
                 if (position == 0) {
-                    Intent intent = new Intent(getActivity(), WebShowActivity.class);
+                    intent = new Intent(getActivity(), WebShowActivity.class);
                     getActivity().startActivity(intent);
-                }else if(position==1){
-                    Intent intent = new Intent(getActivity(), ImageShowActivity.class);
+                } else if (position == 1) {
+                    intent = new Intent(getActivity(), ImageShowActivity.class);
+                    getActivity().startActivity(intent);
+                } else if (position == 2) {
+                    intent = new Intent(getActivity(), LogicViewActivity.class);
+                    getActivity().startActivity(intent);
+                } else if (position == 3) {
+                    intent = new Intent(getActivity(), RainViewActivity.class);
                     getActivity().startActivity(intent);
                 }
             }

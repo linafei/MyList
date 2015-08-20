@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LogicView">
+        <attr name="maxRadio" format="integer" />
+        <attr name="minRadio" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="RainView">
+        <attr name="rainNum" format="integer" />
+    </declare-styleable>
+</resources>
